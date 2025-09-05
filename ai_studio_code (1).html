@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guest List - Raghunadan PG</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Guest Management</h1>
+        <nav>
+            <a href="/">Home</a>
+            <a href="/guests">Guests</a>
+            <a href="/income">Income</a>
+            <a href="/expenses">Expenses</a>
+            <a href="/reports">Reports</a>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h2>Current Guests</h2>
+            <p><a href="/guests/add">Add New Guest</a></p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Room Number</th>
+                        <th>Contact</th>
+                        <th>Check-in Date</th>
+                        <th>Monthly Rent</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for guest in guests %}
+                    <tr>
+                        <td>{{ guest.name }}</td>
+                        <td>{{ guest.room_number }}</td>
+                        <td>{{ guest.contact }}</td>
+                        <td>{{ guest.check_in_date }}</td>
+                        <td>{{ guest.monthly_rent }}</td>
+                        <td>
+                            <a href="/guests/{{ guest.id }}">View</a> |
+                            <a href="/guests/{{ guest.id }}/edit">Edit</a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2023 Raghunadan PG. All rights reserved.</p>
+    </footer>
+</body>
+</html>

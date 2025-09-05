@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add New Guest - Raghunadan PG</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Add New Guest</h1>
+        <nav>
+            <a href="/">Home</a>
+            <a href="/guests">Guests</a>
+            <a href="/income">Income</a>
+            <a href="/expenses">Expenses</a>
+            <a href="/reports">Reports</a>
+        </nav>
+    </header>
+    <main>
+        <form method="POST">
+            <label for="name">Name:</label><br>
+            <input type="text" id="name" name="name" required><br><br>
+
+            <label for="room_number">Room Number:</label><br>
+            <input type="text" id="room_number" name="room_number" required><br><br>
+
+            <label for="contact">Contact:</label><br>
+            <input type="text" id="contact" name="contact"><br><br>
+
+            <label for="check_in_date">Check-in Date:</label><br>
+            <input type="date" id="check_in_date" name="check_in_date"><br><br>
+
+            <label for="monthly_rent">Monthly Rent:</label><br>
+            <input type="number" id="monthly_rent" name="monthly_rent" step="0.01" required><br><br>
+
+            <input type="submit" value="Add Guest">
+        </form>
+    </main>
+    <footer>
+        <p>&copy; 2023 Raghunadan PG. All rights reserved.</p>
+    </footer>
+</body>
+</html>

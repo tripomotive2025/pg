@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raghunadan PG Management</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Welcome to Raghunadan PG Management</h1>
+        <nav>
+            <a href="/">Home</a>
+            <a href="/guests">Guests</a>
+            <a href="/income">Income</a>
+            <a href="/expenses">Expenses</a>
+            <a href="/reports">Reports</a>
+        </nav>
+    </header>
+    <main>
+        <section class="hero">
+            <p>Your all-in-one solution for managing Raghunadan PG residents, payments, and expenses efficiently.</p>
+        </section>
+        <section class="dashboard-overview">
+            <h2>Dashboard Overview</h2>
+            <div class="card">
+                <h3>Total Guests</h3>
+                <p>{{ total_guests }}</p>
+            </div>
+            <!-- Add more cards for upcoming payments, recent expenses, etc. -->
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2023 Raghunadan PG. All rights reserved.</p>
+    </footer>
+</body>
+</html>
